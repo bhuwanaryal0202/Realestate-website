@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BA Real Estate</title>
+    <link rel="stylesheet" href="src/intrested.css">
+    <script src="src/intrested.js"></script>
+</head>
+<body>
+    <!--Creating all the form webpage inside section to organize-->
+    <section class="hero">
+        <nav>
+           <!--Using img tag to insert logo in nav bar-->
+            <img class="logo" src="src/logo.png" alt="BAlogo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="intrested.html">Intrested On</a></li>
+            <li><a href="contact.html">Contact Us</a></li>  
+        </ul>
+        </nav>
+        <!--Creating Intrested on Form for a viewer to fill up-->
+        <h1>Intrested On</h1>
+      <form name="myForm" onsubmit="return validate(this);" method="post">
+         <table class="form-style">
+            <tr>
+                <!--Text field for entering the full name-->
+               <td>
+                  <label>
+                     Enter name <span class="required">*</span>
+                  </label>
+               </td>
+               <td>
+                  <input type="text" name="name" class="long"/>
+                  <span class="error" id="errorname"></span>
+               </td>
+               <td>
+                <label>
+                   Phone Number <span class="required">*</span>
+                </label>
+             </td>
+             <td>
+                <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"required class="long" 
+                />
+                <span class="error" id="errorphone"></span>
+                <small>Format: 123-456-7890</small>
+             </td>
+            </tr>
+            <tr>
+               <td>
+                  <label>
+                    Your email address <span class="required">*</span>
+                  </label>
+               </td>
+               <td>
+                  <input type="email" name="email" class="long"/>
+                  <span class="error" id="erroremail"></span>
+               </td>
+
+               <td>
+                <label>
+                   Address <span class="required">*</span>
+                </label>
+             </td>
+             <td>
+                <input type="text" name="address" class="long"/>
+                <span class="error" id="erroraddress"></span>
+                <small>Enter full street address above, you intrested On.</small>
+             </td>
+            </tr>
+            <tr>
+            <td>
+                <lable>
+                    Price <span class="required">*</span>
+                </lable>
+            </td>
+            <td>
+                <div class="field">
+                    <span>Min</span>
+                    <input type="number" name="min" class="input-min" value="100000">
+                    <span class="error" id="errormin"></span>
+                  </div>
+            </td>
+            <td>
+         
+                <div class="field">
+                    <span>Max</span>
+                    <input type="number" name="max" class="input-max" value="10000000">
+                    <span class="error" id="errormax"></span>
+                  </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+               <input type="submit" value="Send" onclick="send()"/>      
+               <input type="reset" value="Reset" onclick="reset()"/> 
+            </td>
+         </tr>
+
+    </section>
+</body>
+</html>
